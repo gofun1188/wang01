@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '733026073038121');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1346092280519357');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1346092280519357&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoFun - 万万</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: #000000;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            padding-bottom: 120px;
+            min-height: 100vh;
+        }
+
+      
+        .top-register-bar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            padding: 8px 15px;
+            z-index: 1001;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.6);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .top-register-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .top-register-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #000;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .top-register-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .top-register-btn {
+            background: rgba(0, 0, 0, 0.15);
+            color: #000;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .top-register-btn:hover {
+            background: rgba(0, 0, 0, 0.25);
+            transform: scale(1.05);
+        }
+
+        
+        .contact-btn {
+            background: rgba(0, 0, 0, 0.15);
+            color: #000;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-btn:hover {
+            background: rgba(0, 0, 0, 0.25);
+            transform: scale(1.05);
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 50%, transparent 100%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.6);
+            filter: blur(0.5px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-120px) rotate(180deg); opacity: 1; }
+        }
+
+        .header {
+            padding: 20px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .main-logo {
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+            transition: all 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.9));
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .banner-section {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: #000;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        .promo-banner {
+            margin: 30px 0;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .promo-banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        .models-section {
+            margin: 60px 0 40px 0;
+            text-align: center;
+        }
+
+        .section-title-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title-image {
+            max-height: 80px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        .section-title-image:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.8));
+        }
+
+        .model-gallery {
+            display: none;
+        }
+
+        .app-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 80px 0;
+            gap: 80px;
+        }
+
+        .phone-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .phone-glow {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: phone-pulse 3s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes phone-pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .phone-image {
+            width: 350px;
+            height: auto;
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+            animation: phone-float 4s ease-in-out infinite;
+            position: relative;
+            z-index: 20;
+        }
+
+        @keyframes phone-float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .phone-screen-content {
+            position: absolute;
+            top: 0%;
+            left: -20%;
+            width: 84%;
+            height: 88%;
+            border-radius: 35px;
+            overflow: hidden;
+            z-index: 5;
+        }
+
+        .phone-model-carousel {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .phone-model-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        .app-features {
+            max-width: 500px;
+        }
+
+        .feature-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff 0%, #0099cc 50%, #ffffff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+            position: relative;
+            font-family: 'Microsoft JhengHei', 'Arial', sans-serif;
+        }
+
+        .feature-title::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, #00ffff 20%, #00ffff 80%, transparent 100%);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
+
+        .feature-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #0099cc 50%, transparent 100%);
+            border-radius: 1px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.8) 0%, rgba(0, 40, 80, 0.6) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00ffff 0%, #0099cc 100%);
+            border-radius: 2px 0 0 2px;
+        }
+
+        .feature-item:hover {
+            transform: translateX(12px);
+            border-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 12px 35px rgba(0, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(0, 30, 60, 0.9) 0%, rgba(0, 50, 100, 0.7) 100%);
+        }
+
+        .feature-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #00ffff;
+            margin-right: 20px;
+            min-width: 45px;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .feature-number::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.2), rgba(0, 150, 200, 0.2));
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-title-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #b3d9ff;
+            line-height: 1.5;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* 金額高亮（紅色＋微發光） */
+        .highlight-amount {
+            color: #ff3b3b;
+            font-weight: 800;
+            display: inline-block;
+            text-shadow:
+                0 0 6px rgba(255, 59, 59, 0.85),
+                0 0 12px rgba(255, 59, 59, 0.65),
+                0 0 18px rgba(255, 59, 59, 0.45);
+            filter: drop-shadow(0 0 6px rgba(255, 59, 59, 0.5));
+        }
+
+        /* ===== 新增：多元儲值通道區塊 ===== */
+        .section {
+            margin: 60px 0 40px 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.8) 0%, rgba(0, 40, 80, 0.6) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-header { margin-bottom: 10px; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00ffff 0%, #ffffff 50%, #0099cc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .section-content { margin-top: 6px; }
+
+        .payment-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 18px 18px;
+            align-items: stretch;
+        }
+
+        .payment-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 16px;
+            min-height: 132px;
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.15) 100%);
+            border: 1px solid rgba(0, 255, 255, 0.22);
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-method::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(120px 120px at var(--mx, 0%) var(--my, 0%), rgba(0,255,255,0.12), transparent 60%);
+            transition: opacity 0.25s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .payment-method:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 14px 36px rgba(0, 255, 255, 0.18);
+        }
+        .payment-method:hover::before { opacity: 1; }
+
+        .payment-icon {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+        }
+
+        .payment-label {
+            font-size: 0.95rem;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            background: rgba(0, 255, 255, 0.12);
+            border: 1px solid rgba(0, 255, 255, 0.35);
+            padding: 6px 12px;
+            border-radius: 999px;
+            line-height: 1;
+        }
+
+        /* 滑鼠位置高光效果（可選） */
+        .payment-methods-grid .payment-method {
+            --mx: 0%;
+            --my: 0%;
+        }
+
+        @media (max-width: 768px) {
+            .payment-methods-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; }
+            .payment-icon { width: 46px; height: 46px; }
+            .payment-method { min-height: 120px; padding: 16px 12px; }
+        }
+
+        @media (max-width: 480px) {
+            .payment-methods-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .payment-icon { width: 42px; height: 42px; }
+            .payment-label { font-size: 0.9rem; padding: 6px 10px; }
+        }
+
+        /* ===== 新增：社交媒体联系区块 ===== */
+        .social-contact-section {
+            margin: 60px 0 40px 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.8) 0%, rgba(0, 40, 80, 0.6) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffff 0%, #ffffff 50%, #0099cc 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .social-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b3d9ff;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .card-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card-btn {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .card-btn:hover::before {
+            left: 100%;
+        }
+
+        .telegram-card {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.8) 0%, rgba(0, 150, 255, 0.6) 100%);
+            border-color: rgba(0, 136, 204, 0.5);
+        }
+
+        .telegram-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 136, 204, 0.4);
+            border-color: rgba(0, 136, 204, 0.8);
+        }
+
+        .instagram-card {
+            background: linear-gradient(135deg, rgba(225, 48, 108, 0.8) 0%, rgba(188, 42, 141, 0.6) 50%, rgba(81, 91, 212, 0.6) 100%);
+            border-color: rgba(225, 48, 108, 0.5);
+        }
+
+        .instagram-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(225, 48, 108, 0.4);
+            border-color: rgba(225, 48, 108, 0.8);
+        }
+
+        .tiktok-card {
+            background: linear-gradient(135deg, rgba(255, 0, 80, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border-color: rgba(255, 0, 80, 0.5);
+        }
+
+        .tiktok-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 0, 80, 0.4);
+            border-color: rgba(255, 0, 80, 0.8);
+        }
+
+        .youtube-card {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.8) 0%, rgba(255, 87, 87, 0.6) 100%);
+            border-color: rgba(255, 0, 0, 0.5);
+        }
+
+        .youtube-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
+            border-color: rgba(255, 0, 0, 0.8);
+        }
+
+        .card-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-icon-wrapper svg {
+            width: 30px;
+            height: 30px;
+            color: #ffffff;
+        }
+
+        .card-text {
+            flex: 1;
+        }
+
+        .card-text h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .card-text p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* ===== 修改：浮動雙按鈕 ===== */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            display: inline-block;
+            padding: 18px 35px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .floating-register-btn {
+            color: #000;
+            background: linear-gradient(45deg, #00ffff, #ffffff, #ffaa00);
+            border-color: rgba(0, 255, 255, 0.3);
+            animation: floating-glow 2s ease-in-out infinite;
+        }
+
+        .floating-contact-btn {
+            color: #000;
+            background: linear-gradient(45deg, #00ffff, #ffffff, #ffaa00);
+            border-color: rgba(0, 255, 255, 0.3);
+            animation: floating-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes floating-glow {
+            0%, 100% {
+                box-shadow: 0 15px 30px rgba(0, 255, 255, 0.6);
+            }
+            50% {
+                box-shadow: 0 20px 40px rgba(0, 255, 255, 0.8);
+            }
+        }
+
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.6s;
+        }
+
+        .floating-btn:hover::before {
+            left: 100%;
+        }
+
+        .floating-register-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 255, 255, 0.8);
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffaa00);
+        }
+
+        .floating-contact-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 255, 255, 0.8);
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffaa00);
+        }
+
+        .cta-section {
+            display: none;
+        }
+
+        /* ===== 新增：半屏廣告專用檢測和優化 ===== */
+        @media (max-height: 500px) {
+            .top-register-bar {
+                padding: 6px 15px;
+            }
+
+            .top-register-text {
+                font-size: 0.8rem;
+            }
+
+            .top-register-btn {
+                padding: 4px 15px;
+                font-size: 0.8rem;
+            }
+
+            .header {
+                padding: 10px 0;
+            }
+
+            .main-logo {
+                height: 45px !important;
+            }
+
+            .banner-section {
+                margin: 20px 0;
+            }
+
+            .carousel img {
+                height: auto;
+                max-height: 200px;
+                object-fit: contain;
+                background: #000;
+            }
+
+            .models-section {
+                margin: 30px 0 20px 0;
+            }
+
+            .app-showcase {
+                margin: 40px 0;
+                gap: 40px;
+            }
+
+            .social-contact-section {
+                margin: 30px 0 20px 0;
+                padding: 20px 15px;
+            }
+
+            .floating-buttons {
+                bottom: 10px;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .app-showcase {
+                flex-direction: column;
+                gap: 50px;
+                margin: 60px 0;
+            }
+
+            .phone-image {
+                width: 320px;
+            }
+
+            .feature-title {
+                font-size: 2.4rem;
+                text-align: center;
+            }
+
+            .app-features {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .card-buttons {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-register-content {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .top-register-buttons {
+                flex-direction: row;
+                gap: 8px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .top-register-btn {
+                padding: 5px 15px;
+                font-size: 0.85rem;
+                flex: 1;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            body {
+                padding-bottom: 140px;
+            }
+
+            .header {
+                padding: 12px 0;
+            }
+
+            .main-logo {
+                height: 50px;
+            }
+
+            .banner-section {
+                margin: 25px 0;
+            }
+
+            .carousel img {
+                height: auto;
+                max-height: 350px;
+                object-fit: contain;
+                background: #000;
+            }
+
+            .carousel-container {
+                border-radius: 15px;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            }
+
+            .nav-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .carousel-nav {
+                bottom: 15px;
+                gap: 8px;
+            }
+
+            .models-section {
+                margin: 40px 0 30px 0;
+            }
+
+            .section-title-image {
+                max-height: 60px;
+                max-width: 90%;
+            }
+
+            .app-showcase {
+                gap: 40px;
+                margin: 50px 0;
+            }
+
+            .phone-image {
+                width: 320px;
+            }
+
+            .phone-glow {
+                top: -25px;
+                left: -25px;
+                right: -25px;
+                bottom: -25px;
+            }
+
+            .feature-title {
+                font-size: 2.4rem;
+                margin-bottom: 30px;
+                letter-spacing: 2px;
+            }
+
+            .feature-item {
+                padding: 20px;
+                margin-bottom: 25px;
+                border-radius: 15px;
+            }
+
+            .feature-number {
+                font-size: 1.6rem;
+                width: 40px;
+                height: 40px;
+                margin-right: 15px;
+                min-width: 40px;
+            }
+
+            .feature-title-text {
+                font-size: 1.2rem;
+            }
+
+            .feature-description {
+                font-size: 1rem;
+            }
+
+            .social-contact-section {
+                margin: 40px 0 30px 0;
+                padding: 30px 15px;
+            }
+
+            .social-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .social-subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .card-buttons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .card-btn {
+                padding: 20px;
+            }
+
+            .card-icon-wrapper {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+            }
+
+            .card-icon-wrapper svg {
+                width: 25px;
+                height: 25px;
+            }
+
+            .card-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .card-text p {
+                font-size: 0.9rem;
+            }
+
+            .floating-buttons {
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+                transform: none;
+                width: calc(100% - 30px);
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                flex: 1;
+                text-align: center;
+                padding: 16px 15px;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+
+            .floating-register-btn:hover,
+            .floating-contact-btn:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-register-text {
+                font-size: 0.8rem;
+            }
+
+            .top-register-btn {
+                padding: 4px 12px;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            body {
+                padding-bottom: 120px;
+            }
+
+            .main-logo {
+                height: 45px;
+            }
+
+            .carousel img {
+                height: auto;
+                max-height: 280px;
+                object-fit: contain;
+                background: #000;
+            }
+
+            .carousel-container {
+                border-radius: 12px;
+            }
+
+            .section-title-image {
+                max-height: 50px;
+            }
+
+            .phone-image {
+                width: 280px;
+            }
+
+            .feature-title {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            .feature-item {
+                padding: 18px;
+                margin-bottom: 20px;
+            }
+
+            .feature-number {
+                font-size: 1.4rem;
+                width: 35px;
+                height: 35px;
+                min-width: 35px;
+            }
+
+            .feature-title-text {
+                font-size: 1.1rem;
+            }
+
+            .feature-description {
+                font-size: 0.95rem;
+            }
+
+            .social-contact-section {
+                margin: 30px 0 20px 0;
+                padding: 25px 12px;
+            }
+
+            .social-title {
+                font-size: 1.8rem;
+            }
+
+            .social-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .card-btn {
+                padding: 18px;
+            }
+
+            .card-icon-wrapper {
+                width: 45px;
+                height: 45px;
+                margin-right: 12px;
+            }
+
+            .card-icon-wrapper svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .card-text h3 {
+                font-size: 1.1rem;
+            }
+
+            .card-text p {
+                font-size: 0.85rem;
+            }
+
+            .floating-btn {
+                padding: 14px 12px;
+                font-size: 1rem;
+            }
+
+            .floating-buttons {
+                bottom: 12px;
+                left: 12px;
+                right: 12px;
+                width: calc(100% - 24px);
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .top-register-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .top-register-btn {
+                width: 100%;
+            }
+
+            .phone-image {
+                width: 260px;
+            }
+
+            .feature-title {
+                font-size: 1.8rem;
+                letter-spacing: 0.5px;
+            }
+
+            .social-title {
+                font-size: 1.6rem;
+            }
+
+            .floating-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .floating-btn {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+                width: 100%;
+            }
+
+            .carousel img {
+                height: auto;
+                max-height: 240px;
+                object-fit: contain;
+                background: #000;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .nav-dot, .floating-btn, .card-btn {
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .phone-glow {
+                animation: phone-pulse 4s ease-in-out infinite;
+            }
+
+            .phone-image {
+                animation: phone-float 5s ease-in-out infinite;
+            }
+
+            @keyframes phone-float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+            }
+
+            .feature-item:hover {
+                transform: translateX(5px);
+            }
+
+            .card-btn:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-register-bar" style="display: none;">
+        <div class="top-register-content">
+            <div class="top-register-text">🎮 ｜九月會員最高反水1.4%</div>
+            <div class="top-register-buttons">
+                <a href="https://t.me/xin_165" class="top-register-btn contact-btn" target="_blank">
+                    联系万万
+                </a>
+                <a href="#" class="top-register-btn register-btn" id="topRegisterBtn" onclick="showDomainModal(); return false;">
+                    快速註冊
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <header class="header" style="display: block;">
+        <div class="logo-container">
+            <img src="images/logo.webp" alt="百富 Logo" class="main-logo" style="height: 80px; width: auto;">
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 新增：標題和副標題區域 -->
+        <section class="hero-section" style="text-align: center; padding: 40px 0;">
+            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
+                <img src="images/标题1.webp" alt="標題" style="max-width: 100%; height: auto; margin-bottom: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </a>
+            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
+                <img src="images/反水.webp" alt="九月會員最高反水1.4%" style="max-width: 80%; height: auto; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </a>
+        </section>
+
+        <!-- YouTube影片區域 -->
+        <section class="video-section" style="padding: 30px 0; text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto; background: #000; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <iframe 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                        src="https://www.youtube.com/embed/TXTT5hdaEtY?si=B8zEHWmFRTV2Fnre&autoplay=1&mute=1&loop=1&playlist=TXTT5hdaEtY"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 圖片輪播區 -->
+        <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
+            <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
+                <div class="carousel-wrapper" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+                    <div class="carousel-track" id="carouselTrack" style="display: flex; transition: transform 0.5s ease;">
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 輪播指示器 -->
+                <div class="carousel-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+                    <span class="indicator active" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(5)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                </div>
+            </div>
+        </section>
+
+      
+        <style>
+            .app-showcase {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 80px auto;
+                gap: 80px;
+                max-width: 800px;
+            }
+            
+            @media (max-width: 768px) {
+                /* 確保移動端背景不變白 */
+                html, body {
+                    background-color: #000000 !important;
+                    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%) !important;
+                    background-attachment: fixed !important;
+                }
+                
+                .app-showcase {
+                    flex-direction: column;
+                    gap: 50px;
+                    margin: 60px auto;
+                }
+                
+                .phone-image {
+                    width: 320px !important;
+                }
+                
+            
+                .container, section {
+                    background: transparent !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+               
+                html, body {
+                    background-color: #000000 !important;
+                    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%) !important;
+                    background-attachment: fixed !important;
+                }
+                
+                .phone-image {
+                    width: 280px !important;
+                }
+                
+                /* 確保容器背景透明 */
+                .container, section {
+                    background: transparent !important;
+                }
+            }
+
+            .phone-container {
+                position: relative;
+                z-index: 10;
+            }
+
+            .phone-glow {
+                position: absolute;
+                top: -30px;
+                left: -30px;
+                right: -30px;
+                bottom: -30px;
+                background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
+                border-radius: 50%;
+                animation: phone-pulse 3s ease-in-out infinite;
+                z-index: -1;
+            }
+
+            @keyframes phone-pulse {
+                0%, 100% { opacity: 0.6; transform: scale(1); }
+                50% { opacity: 1; transform: scale(1.2); }
+            }
+
+            .phone-image {
+                width: 350px;
+                height: auto;
+                filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+                animation: phone-float 4s ease-in-out infinite;
+                position: relative;
+                z-index: 20;
+            }
+
+            @keyframes phone-float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(2deg); }
+            }
+
+            .phone-screen-content {
+                position: absolute;
+                top: 0%;
+                left: -20%;
+                width: 84%;
+                height: 88%;
+                border-radius: 35px;
+                overflow: hidden;
+                z-index: 5;
+            }
+
+            .phone-model-carousel {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .phone-model-carousel img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                flex-shrink: 0;
+                filter: brightness(1.1) contrast(1.1);
+            }
+
+            .app-features {
+                max-width: 500px;
+            }
+
+            .feature-title {
+                font-size: 2.8rem;
+                font-weight: 700;
+                background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #ffffff 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 40px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                text-align: center;
+                position: relative;
+            }
+        </style>
+
+        <section class="app-showcase">
+            <div class="phone-container">
+                <div class="phone-glow"></div>
+                <a href="https://t.me/xin_165" target="_blank" style="display: inline-block;">
+                    <img src="images/1_phone-1.webp" alt="手機展示" class="phone-image">
+                </a>
+                <div class="phone-screen-content">
+                    <div class="phone-model-carousel" id="phoneModelCarousel">
+                        <!-- 美女圖片會由JavaScript動態載入 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 萬萬圖片區域 -->
+        <section style="padding: 0 20px 40px 20px; text-align: center; margin-top: -100px; position: relative; z-index: 30;">
+            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
+                <img src="images/萬萬.png" alt="萬萬" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 40px rgba(255, 215, 0, 0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 30px rgba(255, 215, 0, 0.3)'">
+            </a>
+        </section>
+
+        <style>
+            @keyframes pulse-gold {
+                0%, 100% { filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.6)); }
+                50% { filter: drop-shadow(0 8px 35px rgba(255, 215, 0, 0.9)); }
+            }
+            
+            /* 金幣爆炸效果樣式 */
+            .gold-coin {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                animation: coinFly 1.5s ease-out forwards;
+                pointer-events: none;
+                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+            }
+            
+            .gold-coin img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            
+            .gold-particle {
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background: #FFD700;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(255, 215, 0, 1);
+                animation: particleFly 1s ease-out forwards;
+                pointer-events: none;
+            }
+            
+            @keyframes coinFly {
+                0% {
+                    transform: translate(0, 0) rotate(0deg) scale(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: translate(var(--x), calc(var(--y) - 50px)) rotate(360deg) scale(1.2);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(calc(var(--x) * 2), var(--y)) rotate(720deg) scale(0.8);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes particleFly {
+                0% {
+                    transform: translate(0, 0) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(var(--px), var(--py)) scale(0);
+                    opacity: 0;
+                }
+            }
+        </style>
+
+
+        <!-- 分割線 -->
+        <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
+
+     
+        <section class="payment-section" style="padding: 40px 0; overflow: hidden;">
+            <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 30px;">多元儲值方式</h2>
+            <div style="position: relative; padding: 0 40px;">
+                <div style="overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;">
+                    <div style="display: flex; gap: 20px; padding: 20px 0; min-width: max-content;">
+                        <div class="payment-card" style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                            <img src="images/支付/USDT.webp" alt="USDT" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div style="color: #FFD700; font-weight: bold;">USDT</div>
+                        </div>
+                        <div class="payment-card" style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                            <img src="images/支付/applepay.webp" alt="Apple Pay" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div style="color: #FFD700; font-weight: bold;">APPLE PAY</div>
+                        </div>
+                        <div class="payment-card" style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                            <img src="images/支付/轉數快.webp" alt="FPS" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div style="color: #FFD700; font-weight: bold;">FPS轉數快</div>
+                        </div>
+                        <div class="payment-card" style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                            <img src="images/支付/汇旺.webp" alt="匯旺" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div style="color: #FFD700; font-weight: bold;">匯旺</div>
+                        </div>
+                        <div class="payment-card" style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                            <img src="images/支付/ABA.webp" alt="ABA" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div style="color: #FFD700; font-weight: bold;">ABA</div>
+                        </div>
+                        <div class="payment-card" style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                            <img src="images/支付/信用卡.webp" alt="信用卡" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div style="color: #FFD700; font-weight: bold;">信用卡</div>
+                        </div>
+                        <div class="payment-card" style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                            <img src="images/支付/ebpay.webp" alt="EBpay" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div style="color: #FFD700; font-weight: bold;">EBpay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分割線 -->
+        <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
+
+        <!-- 平台優勢 -->
+        <section class="advantages-section" style="padding: 40px 20px;">
+            <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 40px;">平台優勢</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="text-align: center; padding: 20px;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="images/标题ICON/合法平台.webp" alt="合法平台" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 10px;">合法平台</h3>
+                    <p style="color: #ccc; line-height: 1.6;">合規經營，資金與帳號安全保障。</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="images/标题ICON/快速提款.webp" alt="快速提款" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 10px;">快速提款</h3>
+                    <p style="color: #ccc; line-height: 1.6;">不限金額，常見 10 分鐘內到帳。</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="images/标题ICON/免實名认证.webp" alt="免實名認證" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 10px;">免實名認證</h3>
+                    <p style="color: #ccc; line-height: 1.6;">一鍵註冊即可開玩，保護隱私。</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="images/标题ICON/多幣種支付.webp" alt="多幣種支付" style="width: 80px; height: 80px; object-fit: contain;">
+                    </div>
+                    <h3 style="color: #FFD700; margin-bottom: 10px;">多幣種支付</h3>
+                    <p style="color: #ccc; line-height: 1.6;">USDT、Apple Pay、信用卡，多國法幣通道全支援。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分割線 -->
+        <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
+
+        <!-- 頁尾社交連結 -->
+        <footer style="padding: 40px 20px; background: rgba(0, 0, 0, 0.8); text-align: center;">
+            <div style="display: flex; gap: 40px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
+                <a href="https://t.me/xin_165" target="_blank" style="text-decoration: none; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #0088cc, #00a8e8); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);">
+                        <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
+                            <path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z"/>
+                        </svg>
+                    </div>
+                    <div style="color: #FFD700; font-weight: bold;">Telegram</div>
+                </a>
+                <a href="https://www.instagram.com/ww97_167/" target="_blank" style="text-decoration: none; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCB045); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(131, 58, 180, 0.4);">
+                        <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
+                            <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                        </svg>
+                    </div>
+                    <div style="color: #FFD700; font-weight: bold;">Instagram</div>
+                </a>
+                <a href="https://www.tiktok.com/@ww97_167" target="_blank" style="text-decoration: none; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #000000, #FF0050); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(255, 0, 80, 0.4);">
+                        <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
+                            <path d="M16.6,5.82C15.9,5.33 15.41,4.48 15.41,3.5H12.64V13.17C12.64,14.89 11.27,16.28 9.54,16.28C7.81,16.28 6.44,14.89 6.44,13.17C6.44,11.44 7.82,10.06 9.55,10.06C9.88,10.06 10.19,10.11 10.5,10.21V7.35C10.19,7.31 9.87,7.28 9.54,7.28C6.27,7.28 3.61,9.97 3.61,13.28C3.61,16.59 6.27,19.28 9.54,19.28C12.81,19.28 15.47,16.59 15.47,13.28V8.37C16.52,9.1 17.77,9.53 19.11,9.53V6.73C18.17,6.73 17.31,6.38 16.6,5.82Z"/>
+                        </svg>
+                    </div>
+                    <div style="color: #FFD700; font-weight: bold;">TikTok</div>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+   
+    <div style="position: fixed; right: 20px; bottom: 80px; z-index: 1000;">
+        <button onclick="triggerGoldExplosion(event)" style="
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+            animation: pulse-gold 2s infinite;
+            position: relative;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="images/按钮1.png" alt="立即註冊" style="width: 100px; height: auto;">
+        </button>
+    </div>
+    
+ 
+    <div id="explosionContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000;"></div>
+
+   
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #FFD700, #FFA500); padding: 15px; text-align: center; z-index: 1000; box-shadow: 0 -5px 20px rgba(255, 215, 0, 0.5);">
+        <a href="https://t.me/xin_165" target="_blank" style="color: #000; font-weight: bold; font-size: 1.1rem; text-decoration: none;">
+            💬 聯繫代理万万
+        </a>
+    </div>
+
+    <!-- 區域選擇彈窗 -->
+    <div id="domainModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
+        <div style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+            <h2 style="color: #FFD700; text-align: center; margin-bottom: 10px;">註冊入口</h2>
+            <h3 style="color: #FFA500; text-align: center; margin-bottom: 25px;">【請選擇適合的網域】</h3>
+            
+            <div style="margin-bottom: 20px;">
+                <a href="https://97y.me/9jXKr" target="_blank" onclick="closeDomainModal()" style="display: block; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'" onmouseout="this.style.background='rgba(255, 215, 0, 0.1)'">
+                    <div style="font-weight: bold; color: #FFD700;">【GL】全球用戶專用</div>
+                    <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/9jXKr</div>
+                </a>
+                
+                <a href="https://97y.me/MRAC7" target="_blank" onclick="closeDomainModal()" style="display: block; background: rgba(255, 165, 0, 0.1); border: 2px solid #FFA500; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='rgba(255, 165, 0, 0.2)'" onmouseout="this.style.background='rgba(255, 165, 0, 0.1)'">
+                    <div style="font-weight: bold; color: #FFA500;">【CN】中國、柬埔寨用戶專用</div>
+                    <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/MRAC7</div>
+                </a>
+                
+                <a href="https://97y.me/ahevl" target="_blank" onclick="closeDomainModal()" style="display: block; background: rgba(100, 200, 255, 0.1); border: 2px solid #64C8FF; border-radius: 10px; padding: 15px; text-decoration: none; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='rgba(100, 200, 255, 0.2)'" onmouseout="this.style.background='rgba(100, 200, 255, 0.1)'">
+                    <div style="font-weight: bold; color: #64C8FF;">【TW】台灣與其他地區備用網域</div>
+                    <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/ahevl</div>
+                </a>
+            </div>
+            
+            <div style="background: rgba(255, 215, 0, 0.05); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+                <p style="color: #FFD700; margin: 5px 0;">📌 請確認網頁能正常開啟後再註冊</p>
+                <p style="color: #FFD700; margin: 5px 0;">📩 使用上异常歡迎找万万寻求協助</p>
+                <p style="color: #ccc; margin: 5px 0; font-size: 0.9rem;">(註冊好告知万万以免錯過會員好禮)</p>
+            </div>
+            
+            <button onclick="closeDomainModal()" style="width: 100%; background: linear-gradient(45deg, #FFD700, #FFA500); color: #000; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                關閉
+            </button>
+        </div>
+    </div>
+
+    <script>
+       
+        function showDomainModal() {
+            const modal = document.getElementById('domainModal');
+            modal.style.display = 'flex';
+        }
+
+      
+        function closeDomainModal() {
+            const modal = document.getElementById('domainModal');
+            modal.style.display = 'none';
+        }
+
+   
+        function createPhoneModelGallery() {
+            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+            if (!phoneModelCarousel) return;
+            
+            const imageFiles = [
+                'images/mt/ah48n-4ldpx.webp',
+                'images/mt/amhji-uv5bp.webp',
+                'images/mt/aqjgq-s2whp.webp'
+            ];
+
+            imageFiles.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `美女主播 ${index + 1}`;
+                img.loading = 'lazy';
+                img.style.cursor = 'pointer';
+                img.onclick = function() {
+                    window.open('https://t.me/xin_165', '_blank');
+                };
+                phoneModelCarousel.appendChild(img);
+            });
+        }
+
+       
+        let phoneModelCurrentSlide = 0;
+        const phoneModelTotalSlides = 3;
+
+        function showPhoneModelSlide(index) {
+            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+            if (!phoneModelCarousel) return;
+            phoneModelCurrentSlide = index;
+            phoneModelCarousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextPhoneModelSlide() {
+            phoneModelCurrentSlide = (phoneModelCurrentSlide + 1) % phoneModelTotalSlides;
+            showPhoneModelSlide(phoneModelCurrentSlide);
+        }
+
+      
+        function createParticles() {
+            const bgAnimation = document.getElementById('bgAnimation');
+            if (!bgAnimation) {
+                console.error('Background animation container not found');
+                return;
+            }
+            
+          
+            bgAnimation.innerHTML = '';
+            
+            const particleCount = window.innerWidth < 768 ? 25 : 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 8 + 4;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                bgAnimation.appendChild(particle);
+            }
+        }
+        
+       
+        let currentCarouselSlide = 0;
+        const totalCarouselSlides = 6;
+        
+        function moveCarousel(direction) {
+            currentCarouselSlide = (currentCarouselSlide + direction + totalCarouselSlides) % totalCarouselSlides;
+            updateCarousel();
+        }
+        
+        function goToSlide(index) {
+            currentCarouselSlide = index;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            if (track) {
+                track.style.transform = `translateX(-${currentCarouselSlide * 100}%)`;
+                
+                // 更新指示器
+                const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+                indicators.forEach((indicator, index) => {
+                    if (index === currentCarouselSlide) {
+                        indicator.style.background = '#FFD700';
+                    } else {
+                        indicator.style.background = 'rgba(255, 215, 0, 0.3)';
+                    }
+                });
+            }
+        }
+        
+        function autoPlayCarousel() {
+            moveCarousel(1);
+        }
+        
+        // 金幣爆炸效果
+        function triggerGoldExplosion(event) {
+            const container = document.getElementById('explosionContainer');
+            const buttonRect = event.currentTarget.getBoundingClientRect();
+            const centerX = buttonRect.left + buttonRect.width / 2;
+            const centerY = buttonRect.top + buttonRect.height / 2;
+            
+            // 創建金幣
+            for (let i = 0; i < 12; i++) {
+                const coin = document.createElement('div');
+                coin.className = 'gold-coin';
+                
+                // 創建圖片元素
+                const img = document.createElement('img');
+                img.src = 'images/支付/USDT.webp';
+                img.alt = 'USDT';
+                coin.appendChild(img);
+                
+                // 隨機位置
+                const angle = (Math.PI * 2 * i) / 12;
+                const distance = 100 + Math.random() * 150;
+                const x = Math.cos(angle) * distance;
+                const y = Math.sin(angle) * distance;
+                
+                coin.style.setProperty('--x', x + 'px');
+                coin.style.setProperty('--y', y + 'px');
+                coin.style.left = (centerX - 25) + 'px'; // 調整位置以圖片中心對齊
+                coin.style.top = (centerY - 25) + 'px';
+                
+                container.appendChild(coin);
+                
+                // 自動移除
+                setTimeout(() => coin.remove(), 1500);
+            }
+            
+            // 創建金光粒子
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'gold-particle';
+                
+                // 隨機方向和距離
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 50 + Math.random() * 200;
+                const px = Math.cos(angle) * distance;
+                const py = Math.sin(angle) * distance;
+                
+                particle.style.setProperty('--px', px + 'px');
+                particle.style.setProperty('--py', py + 'px');
+                particle.style.left = centerX + 'px';
+                particle.style.top = centerY + 'px';
+                
+                container.appendChild(particle);
+                
+                
+                setTimeout(() => particle.remove(), 1000);
+            }
+            
+            
+            // const audio = new Audio('sound/coin.mp3');
+            // audio.play();
+            
+         
+            setTimeout(() => {
+                showDomainModal();
+            }, 500);
+        }
+
+      
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            createPhoneModelGallery();
+            
+        
+            setInterval(nextPhoneModelSlide, 2500);
+            
+        
+            setInterval(autoPlayCarousel, 3000);
+            
+          
+            if (typeof fbq !== 'undefined') {
+                
+                fbq('track', 'ViewContent', {
+                    content_name: '落地頁',
+                    content_category: '娛樂平台'
+                });
+            }
+            
+           
+            document.getElementById('domainModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeDomainModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
