@@ -52,8 +52,17 @@
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+        }
+
         html {
             background: #000000;
+            overflow-x: hidden;
         }
 
         body {
@@ -319,6 +328,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+            overflow-x: hidden;
         }
 
         .banner-section {
@@ -1558,535 +1568,374 @@
                 width: 45px !important;
                 height: 45px !important;
             }
+
             .footer-social-icon svg {
                 width: 22px !important;
                 height: 22px !important;
             }
+
             .footer-social-label {
                 font-size: 12px !important;
             }
+
             .footer-social-container {
                 gap: 15px !important;
+            }
+
+            /* 確保 footer 不超出屏幕 */
+            footer {
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- 防止水平滾動的包裹容器 -->
+    <div style="width: 100%; max-width: 100vw; overflow-x: hidden;">
 
-    <div class="top-register-bar" style="display: none;">
-        <div class="top-register-content">
-            <div class="top-register-text">🎮 ｜九月會員最高反水1.4%</div>
-            <div class="top-register-buttons">
-                <a href="https://t.me/xin_165" class="top-register-btn contact-btn" target="_blank">
-                    联系万万
-                </a>
-                <a href="#" class="top-register-btn register-btn" id="topRegisterBtn"
-                    onclick="showDomainModal(); return false;">
-                    快速註冊
-                </a>
+        <div class="top-register-bar" style="display: none;">
+            <div class="top-register-content">
+                <div class="top-register-text">🎮 ｜九月會員最高反水1.4%</div>
+                <div class="top-register-buttons">
+                    <a href="https://t.me/xin_165" class="top-register-btn contact-btn" target="_blank">
+                        联系万万
+                    </a>
+                    <a href="#" class="top-register-btn register-btn" id="topRegisterBtn"
+                        onclick="showDomainModal(); return false;">
+                        快速註冊
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="bg-animation" id="bgAnimation"></div>
+        <div class="bg-animation" id="bgAnimation"></div>
 
-    <header class="header" style="display: block;">
-        <div class="logo-container">
-            <div class="lightning-container" id="lightningContainer"></div>
-            <img src="images/logo.webp" alt="百富 Logo" class="main-logo" style="height: 120px; width: auto;">
-        </div>
-    </header>
+        <header class="header" style="display: block;">
+            <div class="logo-container">
+                <div class="lightning-container" id="lightningContainer"></div>
+                <img src="images/logo.webp" alt="百富 Logo" class="main-logo" style="height: 120px; width: auto;">
+            </div>
+        </header>
 
-    <div class="container">
-        <!-- 新增：標題和副標題區域 -->
-        <section class="hero-section" style="text-align: center; padding: 40px 0;">
-            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
-                <img src="images/photo_2025-12-08_18-19-20.jpg" alt="標題"
-                    style="max-width: 100%; height: auto; margin-bottom: 20px; transition: transform 0.3s ease;"
-                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            </a>
-        </section>
+        <div class="container">
+            <!-- 新增：標題和副標題區域 -->
+            <section class="hero-section" style="text-align: center; padding: 40px 0;">
+                <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
+                    <img src="images/photo_2025-12-08_18-19-20.jpg" alt="標題"
+                        style="max-width: 100%; height: auto; margin-bottom: 20px; transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+            </section>
 
-        <!-- YouTube影片區域 -->
-        <section class="video-section" style="padding: 30px 0; text-align: center;">
+            <!-- YouTube影片區域 -->
+            <section class="video-section" style="padding: 30px 0; text-align: center;">
+                <div
+                    style="max-width: 800px; margin: 0 auto; background: #000; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/90kgY1CrOxM?autoplay=1&mute=1&loop=1&playlist=90kgY1CrOxM&rel=0&modestbranding=1"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 圖片輪播區 -->
+            <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
+                <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
+                    <div class="carousel-wrapper"
+                        style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+                        <div class="carousel-track" id="carouselTrack"
+                            style="display: flex; transition: transform 0.5s ease;">
+                            <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1"
+                                    style="width: 100%; height: auto; display: block;">
+                            </div>
+                            <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2"
+                                    style="width: 100%; height: auto; display: block;">
+                            </div>
+                            <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3"
+                                    style="width: 100%; height: auto; display: block;">
+                            </div>
+                            <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4"
+                                    style="width: 100%; height: auto; display: block;">
+                            </div>
+                            <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5"
+                                    style="width: 100%; height: auto; display: block;">
+                            </div>
+                            <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6"
+                                    style="width: 100%; height: auto; display: block;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 輪播指示器 -->
+                    <div class="carousel-indicators"
+                        style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+                        <span class="indicator active" onclick="goToSlide(0)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="indicator" onclick="goToSlide(1)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="indicator" onclick="goToSlide(2)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="indicator" onclick="goToSlide(3)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="indicator" onclick="goToSlide(4)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="indicator" onclick="goToSlide(5)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <style>
+                @keyframes pulse-gold {
+
+                    0%,
+                    100% {
+                        filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.6));
+                    }
+
+                    50% {
+                        filter: drop-shadow(0 8px 35px rgba(255, 215, 0, 0.9));
+                    }
+                }
+
+                /* 金幣爆炸效果樣式 */
+                .gold-coin {
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    animation: coinFly 1.5s ease-out forwards;
+                    pointer-events: none;
+                    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+                }
+
+                .gold-coin img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                .gold-particle {
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    background: #FFD700;
+                    border-radius: 50%;
+                    box-shadow: 0 0 10px rgba(255, 215, 0, 1);
+                    animation: particleFly 1s ease-out forwards;
+                    pointer-events: none;
+                }
+
+                @keyframes coinFly {
+                    0% {
+                        transform: translate(0, 0) rotate(0deg) scale(0);
+                        opacity: 1;
+                    }
+
+                    50% {
+                        transform: translate(var(--x), calc(var(--y) - 50px)) rotate(360deg) scale(1.2);
+                        opacity: 1;
+                    }
+
+                    100% {
+                        transform: translate(calc(var(--x) * 2), var(--y)) rotate(720deg) scale(0.8);
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes particleFly {
+                    0% {
+                        transform: translate(0, 0) scale(1);
+                        opacity: 1;
+                    }
+
+                    100% {
+                        transform: translate(var(--px), var(--py)) scale(0);
+                        opacity: 0;
+                    }
+                }
+            </style>
+
+
+            <!-- 分割線 -->
             <div
-                style="max-width: 800px; margin: 0 auto; background: #000; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                        src="https://www.youtube.com/embed/90kgY1CrOxM?autoplay=1&mute=1&loop=1&playlist=90kgY1CrOxM&rel=0&modestbranding=1"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-                </div>
+                style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;">
             </div>
-        </section>
 
-        <!-- 圖片輪播區 -->
-        <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
-            <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
-                <div class="carousel-wrapper"
-                    style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
-                    <div class="carousel-track" id="carouselTrack"
-                        style="display: flex; transition: transform 0.5s ease;">
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1"
-                                style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2"
-                                style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3"
-                                style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4"
-                                style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5"
-                                style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6"
-                                style="width: 100%; height: auto; display: block;">
+
+            <section class="payment-section" style="padding: 40px 0; overflow: hidden;">
+                <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 30px;">多元儲值方式</h2>
+                <div style="position: relative; padding: 0 40px;">
+                    <div style="overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;">
+                        <div style="display: flex; gap: 20px; padding: 20px 0; min-width: max-content;">
+                            <div class="payment-card"
+                                style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                                <img src="images/支付/USDT.webp" alt="USDT"
+                                    style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                                <div style="color: #FFD700; font-weight: bold;">USDT</div>
+                            </div>
+                            <div class="payment-card"
+                                style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                                <img src="images/支付/applepay.webp" alt="Apple Pay"
+                                    style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                                <div style="color: #FFD700; font-weight: bold;">APPLE PAY</div>
+                            </div>
+                            <div class="payment-card"
+                                style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                                <img src="images/支付/轉數快.webp" alt="FPS"
+                                    style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                                <div style="color: #FFD700; font-weight: bold;">FPS轉數快</div>
+                            </div>
+                            <div class="payment-card"
+                                style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                                <img src="images/支付/汇旺.webp" alt="匯旺"
+                                    style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                                <div style="color: #FFD700; font-weight: bold;">匯旺</div>
+                            </div>
+                            <div class="payment-card"
+                                style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                                <img src="images/支付/ABA.webp" alt="ABA"
+                                    style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                                <div style="color: #FFD700; font-weight: bold;">ABA</div>
+                            </div>
+                            <div class="payment-card"
+                                style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                                <img src="images/支付/信用卡.webp" alt="信用卡"
+                                    style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                                <div style="color: #FFD700; font-weight: bold;">信用卡</div>
+                            </div>
+                            <div class="payment-card"
+                                style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
+                                <img src="images/支付/ebpay.webp" alt="EBpay"
+                                    style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                                <div style="color: #FFD700; font-weight: bold;">EBpay</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- 輪播指示器 -->
-                <div class="carousel-indicators"
-                    style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
-                    <span class="indicator active" onclick="goToSlide(0)"
-                        style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(1)"
-                        style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(2)"
-                        style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(3)"
-                        style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(4)"
-                        style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(5)"
-                        style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                </div>
+            <!-- 分割線 -->
+            <div
+                style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;">
             </div>
-        </section>
 
-
-        <style>
-            .app-showcase {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 80px auto;
-                gap: 80px;
-                max-width: 800px;
-            }
-
-            @media (max-width: 768px) {
-
-                /* 確保移動端背景圖片一致 */
-                html,
-                body {
-                    background-color: #000000 !important;
-                    background: url('images/photo_2025-12-08_19-02-41.jpg') no-repeat center center fixed !important;
-                    background-size: cover !important;
-                }
-
-                .app-showcase {
-                    flex-direction: column;
-                    gap: 50px;
-                    margin: 60px auto;
-                }
-
-                .phone-image {
-                    width: 320px !important;
-                }
-
-
-                .container,
-                section {
-                    background: transparent !important;
-                }
-            }
-
-            @media (max-width: 480px) {
-
-                html,
-                body {
-                    background-color: #000000 !important;
-                    background: url('images/photo_2025-12-08_19-02-41.jpg') no-repeat center center fixed !important;
-                    background-size: cover !important;
-                }
-
-                .phone-image {
-                    width: 280px !important;
-                }
-
-                /* 確保容器背景透明 */
-                .container,
-                section {
-                    background: transparent !important;
-                }
-            }
-
-            .phone-container {
-                position: relative;
-                z-index: 10;
-            }
-
-            .phone-glow {
-                position: absolute;
-                top: -30px;
-                left: -30px;
-                right: -30px;
-                bottom: -30px;
-                background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
-                border-radius: 50%;
-                animation: phone-pulse 3s ease-in-out infinite;
-                z-index: -1;
-            }
-
-            @keyframes phone-pulse {
-
-                0%,
-                100% {
-                    opacity: 0.6;
-                    transform: scale(1);
-                }
-
-                50% {
-                    opacity: 1;
-                    transform: scale(1.2);
-                }
-            }
-
-            .phone-image {
-                width: 350px;
-                height: auto;
-                filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
-                animation: phone-float 4s ease-in-out infinite;
-                position: relative;
-                z-index: 20;
-            }
-
-            @keyframes phone-float {
-
-                0%,
-                100% {
-                    transform: translateY(0px) rotate(0deg);
-                }
-
-                50% {
-                    transform: translateY(-20px) rotate(2deg);
-                }
-            }
-
-            .phone-screen-content {
-                position: absolute;
-                top: 0%;
-                left: -20%;
-                width: 84%;
-                height: 88%;
-                border-radius: 35px;
-                overflow: hidden;
-                z-index: 5;
-            }
-
-            .phone-model-carousel {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-
-            .phone-model-carousel img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                flex-shrink: 0;
-                filter: brightness(1.1) contrast(1.1);
-            }
-
-            .app-features {
-                max-width: 500px;
-            }
-
-            .feature-title {
-                font-size: 2.8rem;
-                font-weight: 700;
-                background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #ffffff 100%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                margin-bottom: 40px;
-                text-transform: uppercase;
-                letter-spacing: 4px;
-                text-align: center;
-                position: relative;
-            }
-        </style>
-
-        <section class="app-showcase">
-            <div class="phone-container">
-                <div class="phone-glow"></div>
-                <a href="https://t.me/xin_165" target="_blank" style="display: inline-block;">
-                    <img src="images/1_phone-1.webp" alt="手機展示" class="phone-image">
-                </a>
-                <div class="phone-screen-content">
-                    <div class="phone-model-carousel" id="phoneModelCarousel">
-                        <!-- 美女圖片會由JavaScript動態載入 -->
+            <!-- 平台優勢 -->
+            <section class="advantages-section" style="padding: 40px 20px;">
+                <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 40px;">平台優勢</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <img src="images/标题ICON/合法平台.webp" alt="合法平台"
+                                style="width: 80px; height: 80px; object-fit: contain;">
+                        </div>
+                        <h3 style="color: #FFD700; margin-bottom: 10px;">合法平台</h3>
+                        <p style="color: #ccc; line-height: 1.6;">合規經營，資金與帳號安全保障。</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <img src="images/标题ICON/快速提款.webp" alt="快速提款"
+                                style="width: 80px; height: 80px; object-fit: contain;">
+                        </div>
+                        <h3 style="color: #FFD700; margin-bottom: 10px;">快速提款</h3>
+                        <p style="color: #ccc; line-height: 1.6;">不限金額，常見 10 分鐘內到帳。</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <img src="images/标题ICON/免實名认证.webp" alt="免實名認證"
+                                style="width: 80px; height: 80px; object-fit: contain;">
+                        </div>
+                        <h3 style="color: #FFD700; margin-bottom: 10px;">免實名認證</h3>
+                        <p style="color: #ccc; line-height: 1.6;">一鍵註冊即可開玩，保護隱私。</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <img src="images/标题ICON/多幣種支付.webp" alt="多幣種支付"
+                                style="width: 80px; height: 80px; object-fit: contain;">
+                        </div>
+                        <h3 style="color: #FFD700; margin-bottom: 10px;">多幣種支付</h3>
+                        <p style="color: #ccc; line-height: 1.6;">USDT、Apple Pay、信用卡，多國法幣通道全支援。</p>
                     </div>
                 </div>
+            </section>
+
+            <!-- 分割線 -->
+            <div
+                style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;">
             </div>
-        </section>
 
-        <!-- 萬萬圖片區域 -->
-        <section
-            style="padding: 0 20px 40px 20px; text-align: center; margin-top: -100px; position: relative; z-index: 30;">
-            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
-                <img src="images/萬萬.png" alt="萬萬"
-                    style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;"
-                    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 40px rgba(255, 215, 0, 0.5)'"
-                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 30px rgba(255, 215, 0, 0.3)'">
-            </a>
-        </section>
-
-        <style>
-            @keyframes pulse-gold {
-
-                0%,
-                100% {
-                    filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.6));
-                }
-
-                50% {
-                    filter: drop-shadow(0 8px 35px rgba(255, 215, 0, 0.9));
-                }
-            }
-
-            /* 金幣爆炸效果樣式 */
-            .gold-coin {
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                animation: coinFly 1.5s ease-out forwards;
-                pointer-events: none;
-                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
-            }
-
-            .gold-coin img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-
-            .gold-particle {
-                position: absolute;
-                width: 8px;
-                height: 8px;
-                background: #FFD700;
-                border-radius: 50%;
-                box-shadow: 0 0 10px rgba(255, 215, 0, 1);
-                animation: particleFly 1s ease-out forwards;
-                pointer-events: none;
-            }
-
-            @keyframes coinFly {
-                0% {
-                    transform: translate(0, 0) rotate(0deg) scale(0);
-                    opacity: 1;
-                }
-
-                50% {
-                    transform: translate(var(--x), calc(var(--y) - 50px)) rotate(360deg) scale(1.2);
-                    opacity: 1;
-                }
-
-                100% {
-                    transform: translate(calc(var(--x) * 2), var(--y)) rotate(720deg) scale(0.8);
-                    opacity: 0;
-                }
-            }
-
-            @keyframes particleFly {
-                0% {
-                    transform: translate(0, 0) scale(1);
-                    opacity: 1;
-                }
-
-                100% {
-                    transform: translate(var(--px), var(--py)) scale(0);
-                    opacity: 0;
-                }
-            }
-        </style>
-
-
-        <!-- 分割線 -->
-        <div
-            style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;">
+            <!-- 頁尾社交連結 -->
+            <footer
+                style="position: relative; display: flex; justify-content: center; padding: 5px; background: transparent; width: 100%; overflow: hidden;">
+                <div style="position: relative; width: 95%; max-width: 500px; aspect-ratio: 1/1;">
+                    <!-- 邊框圖片 -->
+                    <img src="images/Gemini_Generated_Image_z16a30z16a30z16a.jpg"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; z-index: 0;"
+                        alt="邊框">
+                    <!-- 社交圖標容器 - 放在邊框內部 -->
+                    <div class="footer-social-container"
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; display: flex; flex-direction: row; gap: 20px; justify-content: center; align-items: center;">
+                        <a href="https://t.me/xin_165" target="_blank"
+                            style="text-decoration: none; transition: all 0.3s; margin-left: 10px;"
+                            onmouseover="this.style.transform='translateY(-5px)'"
+                            onmouseout="this.style.transform='translateY(0)'">
+                            <div class="footer-social-icon"
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #0088cc, #00a8e8); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);">
+                                <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
+                                </svg>
+                            </div>
+                            <div class="footer-social-label" style="color: #FFD700; font-weight: bold;">Telegram</div>
+                        </a>
+                        <a href="https://www.instagram.com/ww97_167/" target="_blank"
+                            style="text-decoration: none; transition: all 0.3s;"
+                            onmouseover="this.style.transform='translateY(-5px)'"
+                            onmouseout="this.style.transform='translateY(0)'">
+                            <div class="footer-social-icon"
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCB045); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(131, 58, 180, 0.4);">
+                                <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
+                                    <path
+                                        d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                                </svg>
+                            </div>
+                            <div class="footer-social-label" style="color: #FFD700; font-weight: bold;">Instagram</div>
+                        </a>
+                        <a href="https://www.tiktok.com/@ww97_167" target="_blank"
+                            style="text-decoration: none; transition: all 0.3s;"
+                            onmouseover="this.style.transform='translateY(-5px)'"
+                            onmouseout="this.style.transform='translateY(0)'">
+                            <div class="footer-social-icon"
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #000000, #FF0050); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(255, 0, 80, 0.4);">
+                                <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.6,5.82C15.9,5.33 15.41,4.48 15.41,3.5H12.64V13.17C12.64,14.89 11.27,16.28 9.54,16.28C7.81,16.28 6.44,14.89 6.44,13.17C6.44,11.44 7.82,10.06 9.55,10.06C9.88,10.06 10.19,10.11 10.5,10.21V7.35C10.19,7.31 9.87,7.28 9.54,7.28C6.27,7.28 3.61,9.97 3.61,13.28C3.61,16.59 6.27,19.28 9.54,19.28C12.81,19.28 15.47,16.59 15.47,13.28V8.37C16.52,9.1 17.77,9.53 19.11,9.53V6.73C18.17,6.73 17.31,6.38 16.6,5.82Z" />
+                                </svg>
+                            </div>
+                            <div class="footer-social-label" style="color: #FFD700; font-weight: bold;">TikTok</div>
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </div>
 
 
-        <section class="payment-section" style="padding: 40px 0; overflow: hidden;">
-            <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 30px;">多元儲值方式</h2>
-            <div style="position: relative; padding: 0 40px;">
-                <div style="overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;">
-                    <div style="display: flex; gap: 20px; padding: 20px 0; min-width: max-content;">
-                        <div class="payment-card"
-                            style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
-                            <img src="images/支付/USDT.webp" alt="USDT"
-                                style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-                            <div style="color: #FFD700; font-weight: bold;">USDT</div>
-                        </div>
-                        <div class="payment-card"
-                            style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
-                            <img src="images/支付/applepay.webp" alt="Apple Pay"
-                                style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-                            <div style="color: #FFD700; font-weight: bold;">APPLE PAY</div>
-                        </div>
-                        <div class="payment-card"
-                            style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
-                            <img src="images/支付/轉數快.webp" alt="FPS"
-                                style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-                            <div style="color: #FFD700; font-weight: bold;">FPS轉數快</div>
-                        </div>
-                        <div class="payment-card"
-                            style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
-                            <img src="images/支付/汇旺.webp" alt="匯旺"
-                                style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-                            <div style="color: #FFD700; font-weight: bold;">匯旺</div>
-                        </div>
-                        <div class="payment-card"
-                            style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
-                            <img src="images/支付/ABA.webp" alt="ABA"
-                                style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-                            <div style="color: #FFD700; font-weight: bold;">ABA</div>
-                        </div>
-                        <div class="payment-card"
-                            style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
-                            <img src="images/支付/信用卡.webp" alt="信用卡"
-                                style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-                            <div style="color: #FFD700; font-weight: bold;">信用卡</div>
-                        </div>
-                        <div class="payment-card"
-                            style="min-width: 150px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s;">
-                            <img src="images/支付/ebpay.webp" alt="EBpay"
-                                style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
-                            <div style="color: #FFD700; font-weight: bold;">EBpay</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 分割線 -->
-        <div
-            style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;">
-        </div>
-
-        <!-- 平台優勢 -->
-        <section class="advantages-section" style="padding: 40px 20px;">
-            <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 40px;">平台優勢</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                <div style="text-align: center; padding: 20px;">
-                    <div style="margin-bottom: 15px;">
-                        <img src="images/标题ICON/合法平台.webp" alt="合法平台"
-                            style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3 style="color: #FFD700; margin-bottom: 10px;">合法平台</h3>
-                    <p style="color: #ccc; line-height: 1.6;">合規經營，資金與帳號安全保障。</p>
-                </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="margin-bottom: 15px;">
-                        <img src="images/标题ICON/快速提款.webp" alt="快速提款"
-                            style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3 style="color: #FFD700; margin-bottom: 10px;">快速提款</h3>
-                    <p style="color: #ccc; line-height: 1.6;">不限金額，常見 10 分鐘內到帳。</p>
-                </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="margin-bottom: 15px;">
-                        <img src="images/标题ICON/免實名认证.webp" alt="免實名認證"
-                            style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3 style="color: #FFD700; margin-bottom: 10px;">免實名認證</h3>
-                    <p style="color: #ccc; line-height: 1.6;">一鍵註冊即可開玩，保護隱私。</p>
-                </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="margin-bottom: 15px;">
-                        <img src="images/标题ICON/多幣種支付.webp" alt="多幣種支付"
-                            style="width: 80px; height: 80px; object-fit: contain;">
-                    </div>
-                    <h3 style="color: #FFD700; margin-bottom: 10px;">多幣種支付</h3>
-                    <p style="color: #ccc; line-height: 1.6;">USDT、Apple Pay、信用卡，多國法幣通道全支援。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 分割線 -->
-        <div
-            style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;">
-        </div>
-
-        <!-- 頁尾社交連結 -->
-        <footer style="position: relative; display: flex; justify-content: center; padding: 5px; background: transparent;">
-            <div style="position: relative; width: 100vw; max-width: 900px; min-width: 500px; aspect-ratio: 1/1;">
-                <!-- 邊框圖片 -->
-                <img src="images/Gemini_Generated_Image_z16a30z16a30z16a.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; z-index: 0;" alt="邊框">
-                <!-- 社交圖標容器 - 放在邊框內部 -->
-                <div class="footer-social-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; display: flex; flex-direction: row; gap: 20px; justify-content: center; align-items: center;">
-                <a href="https://t.me/xin_165" target="_blank" style="text-decoration: none; transition: all 0.3s; margin-left: 10px;"
-                    onmouseover="this.style.transform='translateY(-5px)'"
-                    onmouseout="this.style.transform='translateY(0)'">
-                    <div class="footer-social-icon"
-                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #0088cc, #00a8e8); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);">
-                        <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
-                            <path
-                                d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
-                        </svg>
-                    </div>
-                    <div class="footer-social-label" style="color: #FFD700; font-weight: bold;">Telegram</div>
-                </a>
-                <a href="https://www.instagram.com/ww97_167/" target="_blank"
-                    style="text-decoration: none; transition: all 0.3s;"
-                    onmouseover="this.style.transform='translateY(-5px)'"
-                    onmouseout="this.style.transform='translateY(0)'">
-                    <div class="footer-social-icon"
-                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCB045); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(131, 58, 180, 0.4);">
-                        <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
-                            <path
-                                d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-                        </svg>
-                    </div>
-                    <div class="footer-social-label" style="color: #FFD700; font-weight: bold;">Instagram</div>
-                </a>
-                <a href="https://www.tiktok.com/@ww97_167" target="_blank"
-                    style="text-decoration: none; transition: all 0.3s;"
-                    onmouseover="this.style.transform='translateY(-5px)'"
-                    onmouseout="this.style.transform='translateY(0)'">
-                    <div class="footer-social-icon"
-                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #000000, #FF0050); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 5px 15px rgba(255, 0, 80, 0.4);">
-                        <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24">
-                            <path
-                                d="M16.6,5.82C15.9,5.33 15.41,4.48 15.41,3.5H12.64V13.17C12.64,14.89 11.27,16.28 9.54,16.28C7.81,16.28 6.44,14.89 6.44,13.17C6.44,11.44 7.82,10.06 9.55,10.06C9.88,10.06 10.19,10.11 10.5,10.21V7.35C10.19,7.31 9.87,7.28 9.54,7.28C6.27,7.28 3.61,9.97 3.61,13.28C3.61,16.59 6.27,19.28 9.54,19.28C12.81,19.28 15.47,16.59 15.47,13.28V8.37C16.52,9.1 17.77,9.53 19.11,9.53V6.73C18.17,6.73 17.31,6.38 16.6,5.82Z" />
-                        </svg>
-                    </div>
-                    <div class="footer-social-label" style="color: #FFD700; font-weight: bold;">TikTok</div>
-                </a>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-
-    <div style="position: fixed; right: 20px; bottom: 80px; z-index: 1000;">
-        <button onclick="triggerGoldExplosion(event)" style="
+        <div style="position: fixed; right: 20px; bottom: 80px; z-index: 1000;">
+            <button onclick="triggerGoldExplosion(event)" style="
             background: transparent;
             border: none;
             cursor: pointer;
@@ -2095,366 +1944,368 @@
             animation: pulse-gold 2s infinite;
             position: relative;
         " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="images/按钮1.png" alt="立即註冊" style="width: 100px; height: auto;">
-        </button>
-    </div>
-
-
-    <div id="explosionContainer"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000;">
-    </div>
-
-
-    <div
-        style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #FFD700, #FFA500); padding: 15px; text-align: center; z-index: 1000; box-shadow: 0 -5px 20px rgba(255, 215, 0, 0.5);">
-        <a href="https://t.me/xin_165" target="_blank"
-            style="color: #000; font-weight: bold; font-size: 1.1rem; text-decoration: none;">
-            💬 聯繫代理万万
-        </a>
-    </div>
-
-    <!-- 區域選擇彈窗 -->
-    <div id="domainModal"
-        style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
-        <div
-            style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
-            <h2 style="color: #FFD700; text-align: center; margin-bottom: 10px;">註冊入口</h2>
-            <h3 style="color: #FFA500; text-align: center; margin-bottom: 25px;">【請選擇適合的網域】</h3>
-
-            <div style="margin-bottom: 20px;">
-                <a href="https://97y.me/9jXKr" target="_blank" onclick="closeDomainModal()"
-                    style="display: block; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
-                    onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'"
-                    onmouseout="this.style.background='rgba(255, 215, 0, 0.1)'">
-                    <div style="font-weight: bold; color: #FFD700;">【GL】全球用戶專用</div>
-                    <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/9jXKr</div>
-                </a>
-
-                <a href="https://97y.me/MRAC7" target="_blank" onclick="closeDomainModal()"
-                    style="display: block; background: rgba(255, 165, 0, 0.1); border: 2px solid #FFA500; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
-                    onmouseover="this.style.background='rgba(255, 165, 0, 0.2)'"
-                    onmouseout="this.style.background='rgba(255, 165, 0, 0.1)'">
-                    <div style="font-weight: bold; color: #FFA500;">【CN】中國、柬埔寨用戶專用</div>
-                    <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/MRAC7</div>
-                </a>
-
-                <a href="https://97y.me/ahevl" target="_blank" onclick="closeDomainModal()"
-                    style="display: block; background: rgba(100, 200, 255, 0.1); border: 2px solid #64C8FF; border-radius: 10px; padding: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
-                    onmouseover="this.style.background='rgba(100, 200, 255, 0.2)'"
-                    onmouseout="this.style.background='rgba(100, 200, 255, 0.1)'">
-                    <div style="font-weight: bold; color: #64C8FF;">【TW】台灣與其他地區備用網域</div>
-                    <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/ahevl</div>
-                </a>
-            </div>
-
-            <div style="background: rgba(255, 215, 0, 0.05); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
-                <p style="color: #FFD700; margin: 5px 0;">📌 請確認網頁能正常開啟後再註冊</p>
-                <p style="color: #FFD700; margin: 5px 0;">📩 使用上异常歡迎找万万寻求協助</p>
-                <p style="color: #ccc; margin: 5px 0; font-size: 0.9rem;">(註冊好告知万万以免錯過會員好禮)</p>
-            </div>
-
-            <button onclick="closeDomainModal()"
-                style="width: 100%; background: linear-gradient(45deg, #FFD700, #FFA500); color: #000; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: all 0.3s;"
-                onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-                關閉
+                <img src="images/按钮1.png" alt="立即註冊" style="width: 100px; height: auto;">
             </button>
         </div>
-    </div>
-
-    <script>
-
-        function showDomainModal() {
-            const modal = document.getElementById('domainModal');
-            modal.style.display = 'flex';
-        }
 
 
-        function closeDomainModal() {
-            const modal = document.getElementById('domainModal');
-            modal.style.display = 'none';
-        }
+        <div id="explosionContainer"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000;">
+        </div>
 
 
-        function createPhoneModelGallery() {
-            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
-            if (!phoneModelCarousel) return;
+        <div
+            style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #FFD700, #FFA500); padding: 15px; text-align: center; z-index: 1000; box-shadow: 0 -5px 20px rgba(255, 215, 0, 0.5);">
+            <a href="https://t.me/xin_165" target="_blank"
+                style="color: #000; font-weight: bold; font-size: 1.1rem; text-decoration: none;">
+                💬 聯繫代理万万
+            </a>
+        </div>
 
-            const imageFiles = [
-                'images/mt/ah48n-4ldpx.webp',
-                'images/mt/amhji-uv5bp.webp',
-                'images/mt/aqjgq-s2whp.webp'
-            ];
+        <!-- 區域選擇彈窗 -->
+        <div id="domainModal"
+            style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
+            <div
+                style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+                <h2 style="color: #FFD700; text-align: center; margin-bottom: 10px;">註冊入口</h2>
+                <h3 style="color: #FFA500; text-align: center; margin-bottom: 25px;">【請選擇適合的網域】</h3>
 
-            imageFiles.forEach((src, index) => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = `美女主播 ${index + 1}`;
-                img.loading = 'lazy';
-                img.style.cursor = 'pointer';
-                img.onclick = function () {
-                    window.open('https://t.me/xin_165', '_blank');
-                };
-                phoneModelCarousel.appendChild(img);
-            });
-        }
+                <div style="margin-bottom: 20px;">
+                    <a href="https://97y.me/9jXKr" target="_blank" onclick="closeDomainModal()"
+                        style="display: block; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
+                        onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'"
+                        onmouseout="this.style.background='rgba(255, 215, 0, 0.1)'">
+                        <div style="font-weight: bold; color: #FFD700;">【GL】全球用戶專用</div>
+                        <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/9jXKr</div>
+                    </a>
 
+                    <a href="https://97y.me/MRAC7" target="_blank" onclick="closeDomainModal()"
+                        style="display: block; background: rgba(255, 165, 0, 0.1); border: 2px solid #FFA500; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
+                        onmouseover="this.style.background='rgba(255, 165, 0, 0.2)'"
+                        onmouseout="this.style.background='rgba(255, 165, 0, 0.1)'">
+                        <div style="font-weight: bold; color: #FFA500;">【CN】中國、柬埔寨用戶專用</div>
+                        <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/MRAC7</div>
+                    </a>
 
-        let phoneModelCurrentSlide = 0;
-        const phoneModelTotalSlides = 3;
+                    <a href="https://97y.me/ahevl" target="_blank" onclick="closeDomainModal()"
+                        style="display: block; background: rgba(100, 200, 255, 0.1); border: 2px solid #64C8FF; border-radius: 10px; padding: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
+                        onmouseover="this.style.background='rgba(100, 200, 255, 0.2)'"
+                        onmouseout="this.style.background='rgba(100, 200, 255, 0.1)'">
+                        <div style="font-weight: bold; color: #64C8FF;">【TW】台灣與其他地區備用網域</div>
+                        <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://97y.me/ahevl</div>
+                    </a>
+                </div>
 
-        function showPhoneModelSlide(index) {
-            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
-            if (!phoneModelCarousel) return;
-            phoneModelCurrentSlide = index;
-            phoneModelCarousel.style.transform = `translateX(-${index * 100}%)`;
-        }
+                <div
+                    style="background: rgba(255, 215, 0, 0.05); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+                    <p style="color: #FFD700; margin: 5px 0;">📌 請確認網頁能正常開啟後再註冊</p>
+                    <p style="color: #FFD700; margin: 5px 0;">📩 使用上异常歡迎找万万寻求協助</p>
+                    <p style="color: #ccc; margin: 5px 0; font-size: 0.9rem;">(註冊好告知万万以免錯過會員好禮)</p>
+                </div>
 
-        function nextPhoneModelSlide() {
-            phoneModelCurrentSlide = (phoneModelCurrentSlide + 1) % phoneModelTotalSlides;
-            showPhoneModelSlide(phoneModelCurrentSlide);
-        }
+                <button onclick="closeDomainModal()"
+                    style="width: 100%; background: linear-gradient(45deg, #FFD700, #FFA500); color: #000; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: all 0.3s;"
+                    onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                    關閉
+                </button>
+            </div>
+        </div>
 
+        <script>
 
-        function createParticles() {
-            const bgAnimation = document.getElementById('bgAnimation');
-            if (!bgAnimation) {
-                console.error('Background animation container not found');
-                return;
+            function showDomainModal() {
+                const modal = document.getElementById('domainModal');
+                modal.style.display = 'flex';
             }
 
 
-            bgAnimation.innerHTML = '';
-
-            const particleCount = window.innerWidth < 768 ? 25 : 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                const size = Math.random() * 8 + 4;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (Math.random() * 6 + 8) + 's';
-                bgAnimation.appendChild(particle);
+            function closeDomainModal() {
+                const modal = document.getElementById('domainModal');
+                modal.style.display = 'none';
             }
-        }
 
 
-        let currentCarouselSlide = 0;
-        const totalCarouselSlides = 6;
+            function createPhoneModelGallery() {
+                const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+                if (!phoneModelCarousel) return;
 
-        function moveCarousel(direction) {
-            currentCarouselSlide = (currentCarouselSlide + direction + totalCarouselSlides) % totalCarouselSlides;
-            updateCarousel();
-        }
+                const imageFiles = [
+                    'images/mt/ah48n-4ldpx.webp',
+                    'images/mt/amhji-uv5bp.webp',
+                    'images/mt/aqjgq-s2whp.webp'
+                ];
 
-        function goToSlide(index) {
-            currentCarouselSlide = index;
-            updateCarousel();
-        }
+                imageFiles.forEach((src, index) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = `美女主播 ${index + 1}`;
+                    img.loading = 'lazy';
+                    img.style.cursor = 'pointer';
+                    img.onclick = function () {
+                        window.open('https://t.me/xin_165', '_blank');
+                    };
+                    phoneModelCarousel.appendChild(img);
+                });
+            }
 
-        function updateCarousel() {
-            const track = document.getElementById('carouselTrack');
-            if (track) {
-                track.style.transform = `translateX(-${currentCarouselSlide * 100}%)`;
 
-                // 更新指示器
-                const indicators = document.querySelectorAll('.carousel-indicators .indicator');
-                indicators.forEach((indicator, index) => {
-                    if (index === currentCarouselSlide) {
-                        indicator.style.background = '#FFD700';
-                    } else {
-                        indicator.style.background = 'rgba(255, 215, 0, 0.3)';
+            let phoneModelCurrentSlide = 0;
+            const phoneModelTotalSlides = 3;
+
+            function showPhoneModelSlide(index) {
+                const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+                if (!phoneModelCarousel) return;
+                phoneModelCurrentSlide = index;
+                phoneModelCarousel.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            function nextPhoneModelSlide() {
+                phoneModelCurrentSlide = (phoneModelCurrentSlide + 1) % phoneModelTotalSlides;
+                showPhoneModelSlide(phoneModelCurrentSlide);
+            }
+
+
+            function createParticles() {
+                const bgAnimation = document.getElementById('bgAnimation');
+                if (!bgAnimation) {
+                    console.error('Background animation container not found');
+                    return;
+                }
+
+
+                bgAnimation.innerHTML = '';
+
+                const particleCount = window.innerWidth < 768 ? 25 : 50;
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    const size = Math.random() * 8 + 4;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    particle.style.animationDelay = Math.random() * 8 + 's';
+                    particle.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                    bgAnimation.appendChild(particle);
+                }
+            }
+
+
+            let currentCarouselSlide = 0;
+            const totalCarouselSlides = 6;
+
+            function moveCarousel(direction) {
+                currentCarouselSlide = (currentCarouselSlide + direction + totalCarouselSlides) % totalCarouselSlides;
+                updateCarousel();
+            }
+
+            function goToSlide(index) {
+                currentCarouselSlide = index;
+                updateCarousel();
+            }
+
+            function updateCarousel() {
+                const track = document.getElementById('carouselTrack');
+                if (track) {
+                    track.style.transform = `translateX(-${currentCarouselSlide * 100}%)`;
+
+                    // 更新指示器
+                    const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+                    indicators.forEach((indicator, index) => {
+                        if (index === currentCarouselSlide) {
+                            indicator.style.background = '#FFD700';
+                        } else {
+                            indicator.style.background = 'rgba(255, 215, 0, 0.3)';
+                        }
+                    });
+                }
+            }
+
+            function autoPlayCarousel() {
+                moveCarousel(1);
+            }
+
+            // 金幣爆炸效果
+            function triggerGoldExplosion(event) {
+                const container = document.getElementById('explosionContainer');
+                const buttonRect = event.currentTarget.getBoundingClientRect();
+                const centerX = buttonRect.left + buttonRect.width / 2;
+                const centerY = buttonRect.top + buttonRect.height / 2;
+
+                // 創建金幣
+                for (let i = 0; i < 12; i++) {
+                    const coin = document.createElement('div');
+                    coin.className = 'gold-coin';
+
+                    // 創建圖片元素
+                    const img = document.createElement('img');
+                    img.src = 'images/未命名設計 (1).png';
+                    img.alt = '爆炸特效';
+                    coin.appendChild(img);
+
+                    // 隨機位置
+                    const angle = (Math.PI * 2 * i) / 12;
+                    const distance = 100 + Math.random() * 150;
+                    const x = Math.cos(angle) * distance;
+                    const y = Math.sin(angle) * distance;
+
+                    coin.style.setProperty('--x', x + 'px');
+                    coin.style.setProperty('--y', y + 'px');
+                    coin.style.left = (centerX - 25) + 'px'; // 調整位置以圖片中心對齊
+                    coin.style.top = (centerY - 25) + 'px';
+
+                    container.appendChild(coin);
+
+                    // 自動移除
+                    setTimeout(() => coin.remove(), 1500);
+                }
+
+                // 創建金光粒子
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'gold-particle';
+
+                    // 隨機方向和距離
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = 50 + Math.random() * 200;
+                    const px = Math.cos(angle) * distance;
+                    const py = Math.sin(angle) * distance;
+
+                    particle.style.setProperty('--px', px + 'px');
+                    particle.style.setProperty('--py', py + 'px');
+                    particle.style.left = centerX + 'px';
+                    particle.style.top = centerY + 'px';
+
+                    container.appendChild(particle);
+
+
+                    setTimeout(() => particle.remove(), 1000);
+                }
+
+
+                // const audio = new Audio('sound/coin.mp3');
+                // audio.play();
+
+
+                setTimeout(() => {
+                    showDomainModal();
+                }, 500);
+            }
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                createParticles();
+                createPhoneModelGallery();
+
+
+                setInterval(nextPhoneModelSlide, 2500);
+
+
+                setInterval(autoPlayCarousel, 3000);
+
+
+                if (typeof fbq !== 'undefined') {
+
+                    fbq('track', 'ViewContent', {
+                        content_name: '落地頁',
+                        content_category: '娛樂平台'
+                    });
+                }
+
+
+                document.getElementById('domainModal').addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        closeDomainModal();
                     }
                 });
-            }
-        }
 
-        function autoPlayCarousel() {
-            moveCarousel(1);
-        }
+                // 隨機閃電效果
+                function createLightning() {
+                    const container = document.getElementById('lightningContainer');
+                    if (!container) return;
 
-        // 金幣爆炸效果
-        function triggerGoldExplosion(event) {
-            const container = document.getElementById('explosionContainer');
-            const buttonRect = event.currentTarget.getBoundingClientRect();
-            const centerX = buttonRect.left + buttonRect.width / 2;
-            const centerY = buttonRect.top + buttonRect.height / 2;
+                    const lightning = document.createElement('div');
+                    lightning.className = 'lightning';
 
-            // 創建金幣
-            for (let i = 0; i < 12; i++) {
-                const coin = document.createElement('div');
-                coin.className = 'gold-coin';
+                    // 隨機位置（在容器寬度範圍內）
+                    const randomLeft = Math.random() * 100;
+                    lightning.style.left = randomLeft + '%';
+                    lightning.style.top = '0';
+                    lightning.style.height = '100%';
 
-                // 創建圖片元素
-                const img = document.createElement('img');
-                img.src = 'images/未命名設計 (1).png';
-                img.alt = '爆炸特效';
-                coin.appendChild(img);
+                    container.appendChild(lightning);
 
-                // 隨機位置
-                const angle = (Math.PI * 2 * i) / 12;
-                const distance = 100 + Math.random() * 150;
-                const x = Math.cos(angle) * distance;
-                const y = Math.sin(angle) * distance;
+                    // 添加光暈效果
+                    const glow = document.createElement('div');
+                    glow.className = 'lightning-glow';
+                    glow.style.left = randomLeft + '%';
+                    container.appendChild(glow);
 
-                coin.style.setProperty('--x', x + 'px');
-                coin.style.setProperty('--y', y + 'px');
-                coin.style.left = (centerX - 25) + 'px'; // 調整位置以圖片中心對齊
-                coin.style.top = (centerY - 25) + 'px';
-
-                container.appendChild(coin);
-
-                // 自動移除
-                setTimeout(() => coin.remove(), 1500);
-            }
-
-            // 創建金光粒子
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'gold-particle';
-
-                // 隨機方向和距離
-                const angle = Math.random() * Math.PI * 2;
-                const distance = 50 + Math.random() * 200;
-                const px = Math.cos(angle) * distance;
-                const py = Math.sin(angle) * distance;
-
-                particle.style.setProperty('--px', px + 'px');
-                particle.style.setProperty('--py', py + 'px');
-                particle.style.left = centerX + 'px';
-                particle.style.top = centerY + 'px';
-
-                container.appendChild(particle);
-
-
-                setTimeout(() => particle.remove(), 1000);
-            }
-
-
-            // const audio = new Audio('sound/coin.mp3');
-            // audio.play();
-
-
-            setTimeout(() => {
-                showDomainModal();
-            }, 500);
-        }
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            createParticles();
-            createPhoneModelGallery();
-
-
-            setInterval(nextPhoneModelSlide, 2500);
-
-
-            setInterval(autoPlayCarousel, 3000);
-
-
-            if (typeof fbq !== 'undefined') {
-
-                fbq('track', 'ViewContent', {
-                    content_name: '落地頁',
-                    content_category: '娛樂平台'
-                });
-            }
-
-
-            document.getElementById('domainModal').addEventListener('click', function (e) {
-                if (e.target === this) {
-                    closeDomainModal();
+                    // 300ms 後移除閃電效果
+                    setTimeout(() => {
+                        lightning.remove();
+                        glow.remove();
+                    }, 300);
                 }
+
+                // 隨機間隔觸發閃電效果 (2-5秒隨機)
+                function triggerRandomLightning() {
+                    createLightning();
+                    const randomDelay = 2000 + Math.random() * 3000; // 2-5秒
+                    setTimeout(triggerRandomLightning, randomDelay);
+                }
+
+                // 啟動閃電效果
+                setTimeout(triggerRandomLightning, 1000);
+
+                // 隨機掉落圖片效果
+                const fallingImages = [
+                    'images/image_2025-12-08_17-58-58.png',
+                    'images/未命名設計 (3).png',
+                    'images/未命名設計 (1).png'
+                ];
+
+                function createFallingImage() {
+                    const img = document.createElement('img');
+                    img.className = 'falling-image';
+
+                    // 隨機選擇一張圖片
+                    const randomImageIndex = Math.floor(Math.random() * fallingImages.length);
+                    img.src = fallingImages[randomImageIndex];
+
+                    // 隨機水平位置（5-90%，避免超出螢幕）
+                    const randomLeft = 5 + Math.random() * 85;
+                    img.style.left = randomLeft + '%';
+
+                    // 隨機持續時間（10-15秒，更慢）
+                    const randomDuration = 10 + Math.random() * 5;
+                    img.style.animationDuration = randomDuration + 's';
+
+                    // 隨機大小（45-65px）
+                    const randomSize = 45 + Math.random() * 20;
+                    img.style.width = randomSize + 'px';
+
+                    document.body.appendChild(img);
+
+                    // 動畫結束後移除元素
+                    setTimeout(() => {
+                        img.remove();
+                    }, randomDuration * 1000);
+                }
+
+                // 每隔0.5-1.5秒創建一個掉落圖片（更頻繁）
+                function startFallingImages() {
+                    createFallingImage();
+                    const randomInterval = 500 + Math.random() * 1000; // 0.5-1.5秒
+                    setTimeout(startFallingImages, randomInterval);
+                }
+
+                // 啟動掉落效果
+                setTimeout(startFallingImages, 2000);
             });
-
-            // 隨機閃電效果
-            function createLightning() {
-                const container = document.getElementById('lightningContainer');
-                if (!container) return;
-
-                const lightning = document.createElement('div');
-                lightning.className = 'lightning';
-
-                // 隨機位置（在容器寬度範圍內）
-                const randomLeft = Math.random() * 100;
-                lightning.style.left = randomLeft + '%';
-                lightning.style.top = '0';
-                lightning.style.height = '100%';
-
-                container.appendChild(lightning);
-
-                // 添加光暈效果
-                const glow = document.createElement('div');
-                glow.className = 'lightning-glow';
-                glow.style.left = randomLeft + '%';
-                container.appendChild(glow);
-
-                // 300ms 後移除閃電效果
-                setTimeout(() => {
-                    lightning.remove();
-                    glow.remove();
-                }, 300);
-            }
-
-            // 隨機間隔觸發閃電效果 (2-5秒隨機)
-            function triggerRandomLightning() {
-                createLightning();
-                const randomDelay = 2000 + Math.random() * 3000; // 2-5秒
-                setTimeout(triggerRandomLightning, randomDelay);
-            }
-
-            // 啟動閃電效果
-            setTimeout(triggerRandomLightning, 1000);
-
-            // 隨機掉落圖片效果
-            const fallingImages = [
-                'images/image_2025-12-08_17-58-58.png',
-                'images/未命名設計 (3).png',
-                'images/未命名設計 (1).png'
-            ];
-
-            function createFallingImage() {
-                const img = document.createElement('img');
-                img.className = 'falling-image';
-
-                // 隨機選擇一張圖片
-                const randomImageIndex = Math.floor(Math.random() * fallingImages.length);
-                img.src = fallingImages[randomImageIndex];
-
-                // 隨機水平位置（0-100%）
-                const randomLeft = Math.random() * 100;
-                img.style.left = randomLeft + '%';
-
-                // 隨機持續時間（10-15秒，更慢）
-                const randomDuration = 10 + Math.random() * 5;
-                img.style.animationDuration = randomDuration + 's';
-
-                // 隨機大小（45-65px）
-                const randomSize = 45 + Math.random() * 20;
-                img.style.width = randomSize + 'px';
-
-                document.body.appendChild(img);
-
-                // 動畫結束後移除元素
-                setTimeout(() => {
-                    img.remove();
-                }, randomDuration * 1000);
-            }
-
-            // 每隔0.5-1.5秒創建一個掉落圖片（更頻繁）
-            function startFallingImages() {
-                createFallingImage();
-                const randomInterval = 500 + Math.random() * 1000; // 0.5-1.5秒
-                setTimeout(startFallingImages, randomInterval);
-            }
-
-            // 啟動掉落效果
-            setTimeout(startFallingImages, 2000);
-        });
-    </script>
+        </script>
+    </div><!-- 關閉防止水平滾動的包裹容器 -->
 </body>
 
 </html>
