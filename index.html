@@ -3,26 +3,6 @@
 
 <head>
     <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '733026073038121');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
-
-<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -32,11 +12,11 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1490405915439159');
+fbq('init', '733026073038121');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
     
@@ -1613,7 +1593,7 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
         <header class="header" style="display: block;">
             <div class="logo-container">
                 <div class="lightning-container" id="lightningContainer"></div>
-                <img src="images/logo.webp" alt="百富 Logo" class="main-logo" style="height: 120px; width: auto;">
+                <img src="images/logo.webp" alt="百富 Logo" class="main-logo" style="height: 80px; width: auto;">
             </div>
         </header>
 
@@ -1633,7 +1613,7 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
                     style="max-width: 800px; margin: 0 auto; background: #000; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                     <div style="position: relative; padding-bottom: 56.25%; height: 0;">
                         <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://www.youtube.com/embed/90kgY1CrOxM?autoplay=1&mute=1&loop=1&playlist=90kgY1CrOxM&rel=0&modestbranding=1"
+                            src="https://www.youtube.com/embed/UvbA6o8vvCo?autoplay=1&mute=1&loop=1&playlist=UvbA6o8vvCo&rel=0&modestbranding=1"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -1643,10 +1623,10 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
             </section>
 
             <!-- 圖片輪播區 -->
-            <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
+            <section style="padding: 60px 20px;">
                 <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
                     <div class="carousel-wrapper"
-                        style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+                        style="overflow: hidden; border-radius: 20px;">
                         <div class="carousel-track" id="carouselTrack"
                             style="display: flex; transition: transform 0.5s ease;">
                             <div class="carousel-slide" style="min-width: 100%; position: relative;">
@@ -1654,11 +1634,7 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
                                     style="width: 100%; height: auto; display: block;">
                             </div>
                             <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                                <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2"
-                                    style="width: 100%; height: auto; display: block;">
-                            </div>
-                            <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                                <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3"
+                                <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖2"
                                     style="width: 100%; height: auto; display: block;">
                             </div>
                             <div class="carousel-slide" style="min-width: 100%; position: relative;">
@@ -1764,6 +1740,47 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
                     100% {
                         transform: translate(var(--px), var(--py)) scale(0);
                         opacity: 0;
+                    }
+                }
+
+                @keyframes lightningFlash {
+                    0% {
+                        opacity: 1;
+                        transform: scaleY(1) rotate(var(--rotate, 0deg));
+                    }
+                    50% {
+                        opacity: 0.8;
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: scaleY(1.2) rotate(var(--rotate, 0deg));
+                    }
+                }
+
+                @keyframes flashFade {
+                    0% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes buttonShake {
+                    0%, 100% {
+                        transform: translateX(0) rotate(0);
+                    }
+                    20% {
+                        transform: translateX(-3px) rotate(-2deg);
+                    }
+                    40% {
+                        transform: translateX(3px) rotate(2deg);
+                    }
+                    60% {
+                        transform: translateX(-2px) rotate(-1deg);
+                    }
+                    80% {
+                        transform: translateX(2px) rotate(1deg);
                     }
                 }
             </style>
@@ -1960,14 +1977,15 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
         </div>
 
 
-        <div style="position: fixed; right: 20px; bottom: 80px; z-index: 1000;">
+        <div id="floatingButtonContainer" style="position: fixed; right: 20px; bottom: 80px; z-index: 1000;">
+            <div id="buttonLightningContainer" style="position: absolute; top: -20px; left: -20px; right: -20px; bottom: -20px; pointer-events: none; z-index: -1;"></div>
             <button onclick="triggerGoldExplosion(event)" style="
             background: transparent;
             border: none;
             cursor: pointer;
             padding: 0;
             transition: all 0.3s ease;
-            animation: pulse-gold 2s infinite;
+            animation: pulse-gold 2s infinite, buttonShake 0.5s ease-in-out;
             position: relative;
         " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                 <img src="images/按钮1.png" alt="立即註冊" style="width: 100px; height: auto;">
@@ -1992,33 +2010,28 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
         <div id="domainModal"
             style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
             <div
-                style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
-                <h2 style="color: #FFD700; text-align: center; margin-bottom: 10px;">註冊入口</h2>
-                <h3 style="color: #FFA500; text-align: center; margin-bottom: 25px;">【請選擇適合的網域】</h3>
+                style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3); max-height: 90vh; overflow-y: auto;">
+                <h2 style="color: #FFD700; text-align: center; margin-bottom: 20px;">註冊入口</h2>
+
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="images/photo_2026-01-31_19-26-15.webp" alt="GoFun 全球用戶專用入口" style="width: 100%; max-width: 400px; border-radius: 10px; border: 2px solid #FFD700;">
+                </div>
 
                 <div style="margin-bottom: 20px;">
                     <a href="https://USDT88.go-fun.vip/" target="_blank" onclick="closeDomainModal()"
-                        style="display: block; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
+                        style="display: block; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 10px; padding: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
                         onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'"
                         onmouseout="this.style.background='rgba(255, 215, 0, 0.1)'">
-                        <div style="font-weight: bold; color: #FFD700;">【GoFun】全球用戶專用入口</div>
+                        <div style="font-weight: bold; color: #FFD700; font-size: 1.1rem;">【GoFun】全球用戶專用入口</div>
                         <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">https://USDT88.go-fun.vip/</div>
-                    </a>
-
-                    <a href="https://t.me/Gofunww_bot" target="_blank" onclick="closeDomainModal()"
-                        style="display: block; background: rgba(255, 165, 0, 0.1); border: 2px solid #FFA500; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;"
-                        onmouseover="this.style.background='rgba(255, 165, 0, 0.2)'"
-                        onmouseout="this.style.background='rgba(255, 165, 0, 0.1)'">
-                        <div style="font-weight: bold; color: #FFA500;">❰❰GoFun女郎 万万一键註册❱❱</div>
-                        <div style="color: #ccc; font-size: 0.9rem; margin-top: 5px;">⮑点击后点立即註册3~5秒就好了</div>
                     </a>
                 </div>
 
                 <div
                     style="background: rgba(255, 215, 0, 0.05); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
-                    <p style="color: #FFD700; margin: 5px 0;">📌 请确认网页能正常开启后再註册</p>
-                    <p style="color: #FFD700; margin: 5px 0;">📩 使用上异常欢迎找万万寻求协助</p>
-                    <p style="color: #ccc; margin: 5px 0; font-size: 0.9rem;">(註册好告知万万以免错过会员好礼)</p>
+                    <p style="color: #FFD700; margin: 5px 0;">📌 請確認網頁能正常開啓後再註冊</p>
+                    <p style="color: #FFD700; margin: 5px 0;">📩 使用上異常歡迎找萬萬尋求協助</p>
+                    <p style="color: #ccc; margin: 5px 0; font-size: 0.9rem;">(註冊好告知萬萬以免錯過會員好禮)</p>
                 </div>
 
                 <button onclick="closeDomainModal()"
@@ -2230,14 +2243,51 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
                 const centerX = buttonRect.left + buttonRect.width / 2;
                 const centerY = buttonRect.top + buttonRect.height / 2;
 
-                // 創建金幣
+                // 創建閃電效果
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const lightning = document.createElement('div');
+                        lightning.style.cssText = `
+                            position: fixed;
+                            left: ${centerX - 100 + Math.random() * 200}px;
+                            top: ${centerY - 150}px;
+                            width: 4px;
+                            height: ${100 + Math.random() * 100}px;
+                            background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(100,150,255,0.8), transparent);
+                            box-shadow: 0 0 20px #fff, 0 0 40px #4af, 0 0 60px #4af;
+                            transform: rotate(${-15 + Math.random() * 30}deg);
+                            animation: lightningFlash 0.3s ease-out forwards;
+                            z-index: 10001;
+                        `;
+                        container.appendChild(lightning);
+                        setTimeout(() => lightning.remove(), 300);
+                    }, i * 50);
+                }
+
+                // 創建全屏閃光
+                const flash = document.createElement('div');
+                flash.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at ${centerX}px ${centerY}px, rgba(255,255,255,0.8), transparent 50%);
+                    pointer-events: none;
+                    z-index: 10000;
+                    animation: flashFade 0.3s ease-out forwards;
+                `;
+                container.appendChild(flash);
+                setTimeout(() => flash.remove(), 300);
+
+                // 創建金幣（使用掉落圖片）
                 for (let i = 0; i < 12; i++) {
                     const coin = document.createElement('div');
                     coin.className = 'gold-coin';
 
                     // 創建圖片元素
                     const img = document.createElement('img');
-                    img.src = 'images/未命名設計 (1).png';
+                    img.src = 'images/掉落/掉落 (1).webp';
                     img.alt = '爆炸特效';
                     coin.appendChild(img);
 
@@ -2365,9 +2415,12 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
 
                 // 隨機掉落圖片效果
                 const fallingImages = [
-                    'images/image_2025-12-08_17-58-58.png',
-                    'images/未命名設計 (3).png',
-                    'images/未命名設計 (1).png'
+                    'images/掉落/掉落 (1).webp',
+                    'images/掉落/掉落 (4).webp',
+                    'images/掉落/掉落 (5).webp',
+                    'images/掉落/掉落 (6).webp',
+                    'images/掉落/掉落 (7).webp',
+                    'images/掉落/掉落 (8).webp'
                 ];
 
                 function createFallingImage() {
@@ -2407,6 +2460,50 @@ src="https://www.facebook.com/tr?id=1490405915439159&ev=PageView&noscript=1"
 
                 // 啟動掉落效果
                 setTimeout(startFallingImages, 2000);
+
+                // 右下角按鈕抖動和閃電效果
+                function triggerButtonShakeAndLightning() {
+                    const button = document.querySelector('#floatingButtonContainer button');
+                    const lightningContainer = document.getElementById('buttonLightningContainer');
+
+                    if (button && lightningContainer) {
+                        // 觸發抖動
+                        button.style.animation = 'none';
+                        setTimeout(() => {
+                            button.style.animation = 'pulse-gold 2s infinite, buttonShake 0.5s ease-in-out';
+                        }, 10);
+
+                        // 創建閃電效果
+                        for (let i = 0; i < 6; i++) {
+                            setTimeout(() => {
+                                const lightning = document.createElement('div');
+                                const angle = Math.random() * 360;
+                                const length = 60 + Math.random() * 80;
+                                lightning.style.cssText = `
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    width: 4px;
+                                    height: ${length}px;
+                                    background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(100,200,255,0.9), rgba(50,150,255,0.5), transparent);
+                                    box-shadow: 0 0 15px #fff, 0 0 30px #4af, 0 0 50px #4af, 0 0 70px rgba(100,200,255,0.5);
+                                    transform: translate(-50%, -50%) rotate(${angle}deg) translateY(-${length/2 + 30}px);
+                                    animation: lightningFlash 0.4s ease-out forwards;
+                                    z-index: 1;
+                                `;
+                                lightningContainer.appendChild(lightning);
+                                setTimeout(() => lightning.remove(), 400);
+                            }, i * 60);
+                        }
+                    }
+
+                    // 隨機間隔 3-6 秒後再次觸發
+                    const nextInterval = 3000 + Math.random() * 3000;
+                    setTimeout(triggerButtonShakeAndLightning, nextInterval);
+                }
+
+                // 啟動按鈕效果
+                setTimeout(triggerButtonShakeAndLightning, 2000);
 
                 // 支付方式輪播功能
                 let currentPaymentSlide = 0;
