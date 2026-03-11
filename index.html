@@ -1622,6 +1622,44 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
                 </div>
             </section>
 
+            <!-- 用戶評價輪播區 -->
+            <section style="padding: 60px 20px;">
+                <div class="feedback-carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
+                    <div class="feedback-carousel-wrapper" style="overflow: hidden; border-radius: 20px;">
+                        <div class="feedback-carousel-track" id="feedbackCarouselTrack" style="display: flex; transition: transform 0.5s ease;">
+                            <div class="feedback-carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/用户评价/photo_2026-03-11_20-42-06.jpg" alt="用戶評價1" style="width: 100%; height: auto; display: block; cursor: pointer;" onclick="openImageLightbox(this.src)">
+                            </div>
+                            <div class="feedback-carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/用户评价/photo_2026-03-11_20-42-23.jpg" alt="用戶評價2" style="width: 100%; height: auto; display: block; cursor: pointer;" onclick="openImageLightbox(this.src)">
+                            </div>
+                            <div class="feedback-carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/用户评价/photo_2026-03-11_20-42-25.jpg" alt="用戶評價3" style="width: 100%; height: auto; display: block; cursor: pointer;" onclick="openImageLightbox(this.src)">
+                            </div>
+                            <div class="feedback-carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/用户评价/photo_2026-03-11_20-42-28.jpg" alt="用戶評價4" style="width: 100%; height: auto; display: block; cursor: pointer;" onclick="openImageLightbox(this.src)">
+                            </div>
+                            <div class="feedback-carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/用户评价/photo_2026-03-11_20-42-31.jpg" alt="用戶評價5" style="width: 100%; height: auto; display: block; cursor: pointer;" onclick="openImageLightbox(this.src)">
+                            </div>
+                            <div class="feedback-carousel-slide" style="min-width: 100%; position: relative;">
+                                <img src="images/用户评价/photo_2026-03-11_20-42-33.jpg" alt="用戶評價6" style="width: 100%; height: auto; display: block; cursor: pointer;" onclick="openImageLightbox(this.src)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 輪播指示器 -->
+                    <div class="feedback-carousel-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+                        <span class="feedback-indicator active" onclick="goToFeedbackSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="feedback-indicator" onclick="goToFeedbackSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="feedback-indicator" onclick="goToFeedbackSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="feedback-indicator" onclick="goToFeedbackSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="feedback-indicator" onclick="goToFeedbackSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                        <span class="feedback-indicator" onclick="goToFeedbackSlide(5)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    </div>
+                </div>
+            </section>
+
             <!-- 圖片輪播區 -->
             <section style="padding: 60px 20px;">
                 <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
@@ -2034,6 +2072,12 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
             </div>
         </div>
 
+        <!-- 圖片放大彈窗 -->
+        <div id="imageLightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; justify-content: center; align-items: center; cursor: pointer;" onclick="closeImageLightbox()">
+            <img id="lightboxImage" src="" alt="放大圖片" style="max-width: 95%; max-height: 95%; object-fit: contain; border-radius: 10px;">
+            <span style="position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer;">&times;</span>
+        </div>
+
         <!-- 聯繫方式彈窗 -->
         <div id="contactModal"
             style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
@@ -2126,6 +2170,20 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
                 modal.style.display = 'none';
             }
 
+            // 圖片放大功能
+            function openImageLightbox(src) {
+                const lightbox = document.getElementById('imageLightbox');
+                const img = document.getElementById('lightboxImage');
+                img.src = src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeImageLightbox() {
+                const lightbox = document.getElementById('imageLightbox');
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
 
             function createPhoneModelGallery() {
                 const phoneModelCarousel = document.getElementById('phoneModelCarousel');
@@ -2226,6 +2284,41 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
 
             function autoPlayCarousel() {
                 moveCarousel(1);
+            }
+
+            // 用戶評價輪播控制
+            let currentFeedbackSlide = 0;
+            const totalFeedbackSlides = 6;
+
+            function moveFeedbackCarousel(direction) {
+                currentFeedbackSlide = (currentFeedbackSlide + direction + totalFeedbackSlides) % totalFeedbackSlides;
+                updateFeedbackCarousel();
+            }
+
+            function goToFeedbackSlide(index) {
+                currentFeedbackSlide = index;
+                updateFeedbackCarousel();
+            }
+
+            function updateFeedbackCarousel() {
+                const track = document.getElementById('feedbackCarouselTrack');
+                if (track) {
+                    track.style.transform = `translateX(-${currentFeedbackSlide * 100}%)`;
+
+                    // 更新指示器
+                    const indicators = document.querySelectorAll('.feedback-carousel-indicators .feedback-indicator');
+                    indicators.forEach((indicator, index) => {
+                        if (index === currentFeedbackSlide) {
+                            indicator.style.background = '#FFD700';
+                        } else {
+                            indicator.style.background = 'rgba(255, 215, 0, 0.3)';
+                        }
+                    });
+                }
+            }
+
+            function autoPlayFeedbackCarousel() {
+                moveFeedbackCarousel(1);
             }
 
             // 金幣爆炸效果
@@ -2343,6 +2436,8 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
 
                 setInterval(autoPlayCarousel, 3000);
 
+                // 用戶評價輪播自動播放
+                setInterval(autoPlayFeedbackCarousel, 4000);
 
                 if (typeof fbq !== 'undefined') {
 
